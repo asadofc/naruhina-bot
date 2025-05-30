@@ -43,7 +43,7 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/asadofc/narunaruhina.git
+git clone https://github.com/asadofc/naruhina-bot.git
 cd naruhina-bot
 
 # 2. Set up Python environment
