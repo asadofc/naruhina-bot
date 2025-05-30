@@ -39,6 +39,13 @@
 
 ---
 
+## 👤 Author
+
+Developed by **Asadul Islam**  
+Telegram: [@asad_ofc](https://t.me/asad_ofc)
+
+---
+
 ### 💌 Connect with Me
 
 <p align="center">
