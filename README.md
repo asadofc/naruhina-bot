@@ -43,8 +43,8 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-username/naruto-hinata-duet-bot.git
-cd naruto-hinata-duet-bot
+git clone https://github.com/asadofc/narunaruhina.git
+cd naruhina-bot
 
 # 2. Set up Python environment
 python3 -m venv venv
@@ -58,4 +58,4 @@ export BOT1_TOKEN="123456789:ABCDEF-NarutoToken"
 export BOT2_TOKEN="987654321:UVWXYZ-HinataToken"
 
 # 5. Run the duo
-python bot.py
+python naruhina-bot.py
