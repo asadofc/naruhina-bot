@@ -210,21 +210,28 @@ async def stop_duet_chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def chat_loop(chat_id: int, bot1, bot2):
     await asyncio.sleep(2)
     while True:
+        # stop if the chat’s been marked as ended
         if not (chat_id in group_chats and group_chats[chat_id]["chat_started"]):
             break
         if group_chats[chat_id].get("paused", False):
             await asyncio.sleep(3)
             continue
+
         idx = group_chats[chat_id]["story_index"]
+        # **new**: end after the last line instead of looping
         if idx >= len(Story):
-            idx = 0
+            group_chats[chat_id]["chat_started"] = False
+            break
+
         line = Story[idx]
-        speaker, text = line.split(':', 1)
+        speaker, text = line.split(":", 1)
         text = text.strip()
         sender = bot1 if speaker.lower() == 'naruto' else bot2
+
         await sender.send_chat_action(chat_id=chat_id, action=ChatAction.TYPING)
         await asyncio.sleep(4)
         await sender.send_message(chat_id=chat_id, text=text)
+
         group_chats[chat_id]["story_index"] = idx + 1
         await asyncio.sleep(8)
 
